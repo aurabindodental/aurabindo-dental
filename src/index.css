@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dental clinic light theme - no dark mode */
+    --background: 210 100% 98%;
+    --foreground: 210 80% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 80% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 80% 15%;
+
+    /* Navy blue for headings */
+    --primary: 205 85% 21%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Teal for subheadings */
+    --secondary: 190 74% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 0 0% 20%;
+
+    /* Soft blue for buttons */
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 211 100% 50%;
+
+    --radius: 0.75rem;
+    
+    /* Custom gradient backgrounds */
+    --gradient-primary: linear-gradient(135deg, hsl(205, 100%, 98%), hsl(200, 100%, 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(205, 100%, 98%), hsl(200, 100%, 93%));
+    --gradient-card: linear-gradient(to bottom, hsl(0, 0%, 100%), hsl(210, 40%, 98%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px rgba(13, 110, 253, 0.08);
+    --shadow-medium: 0 4px 16px rgba(13, 110, 253, 0.12);
+    --shadow-hover: 0 8px 24px rgba(13, 110, 253, 0.16);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    background: linear-gradient(135deg, hsl(205, 100%, 98%), hsl(200, 100%, 95%));
+    background-attachment: fixed;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-primary font-bold;
+  }
+
+  h2 {
+    @apply text-secondary;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(205, 100%, 98%), hsl(200, 100%, 93%));
+  }
+  
+  .gradient-card {
+    background: linear-gradient(to bottom, hsl(0, 0%, 100%), hsl(210, 40%, 98%));
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 2px 8px rgba(13, 110, 253, 0.08);
+  }
+  
+  .shadow-medium {
+    box-shadow: 0 4px 16px rgba(13, 110, 253, 0.12);
+  }
+  
+  .shadow-hover {
+    box-shadow: 0 8px 24px rgba(13, 110, 253, 0.16);
+  }
+  
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
