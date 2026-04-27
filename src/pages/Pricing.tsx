@@ -83,17 +83,17 @@ const Pricing = () => {
       <WhatsAppFloat />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-4">
+      <section className="pt-24 md:pt-32 pb-8 md:pb-12">
         <div className="container mx-auto text-center max-w-4xl">
           <motion.h1
             {...fadeIn}
-            className="text-4xl md:text-5xl font-bold text-primary mb-6"
+            className="text-3xl md:text-5xl font-bold text-primary mb-4 md:mb-6"
           >
             Treatment Charges
           </motion.h1>
           <motion.p
             {...fadeIn}
-            className="text-lg text-muted-foreground leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground leading-relaxed"
           >
             Transparent, affordable pricing with no hidden costs
           </motion.p>
@@ -101,13 +101,13 @@ const Pricing = () => {
       </section>
 
       {/* Individual Treatments */}
-      <motion.section {...fadeIn} className="py-12 px-4">
+      <motion.section {...fadeIn} className="py-8 md:py-12">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-secondary mb-8 md:mb-12">
             Individual Treatments
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-6xl mx-auto">
             {treatments.map((treatment, index) => (
               <motion.div
                 key={index}
@@ -116,25 +116,21 @@ const Pricing = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05, duration: 0.4 }}
               >
-                <Card className="hover:shadow-medium transition-smooth bg-card">
-                  <CardContent className="p-5">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <h3 className="text-base font-semibold text-primary mb-2">
-                          {treatment.name}
-                        </h3>
-                        <div className="flex items-baseline">
-                          <IndianRupee className="w-4 h-4 text-accent mr-1 mt-0.5" />
-                          <span className="text-xl font-bold text-accent">
-                            {treatment.price.replace('₹', '')}
-                          </span>
-                          {treatment.per && (
-                            <span className="text-xs text-muted-foreground ml-2">
-                              {treatment.per}
-                            </span>
-                          )}
-                        </div>
-                      </div>
+                <Card className="h-full hover:shadow-medium transition-smooth bg-card flex flex-col justify-center">
+                  <CardContent className="p-3 md:p-5 flex flex-col h-full justify-between">
+                    <h3 className="text-xs md:text-base font-semibold text-primary mb-1 md:mb-2 line-clamp-2">
+                      {treatment.name}
+                    </h3>
+                    <div className="flex items-baseline mt-auto">
+                      <IndianRupee className="w-3 h-3 md:w-4 md:h-4 text-accent mr-1 flex-shrink-0" />
+                      <span className="text-sm md:text-xl font-bold text-accent whitespace-nowrap">
+                        {treatment.price.replace('₹', '')}
+                      </span>
+                      {treatment.per && (
+                        <span className="text-[10px] md:text-xs text-muted-foreground ml-1 md:ml-2">
+                          {treatment.per}
+                        </span>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -145,16 +141,16 @@ const Pricing = () => {
       </motion.section>
 
       {/* Package Deals */}
-      <motion.section {...fadeIn} className="py-16 px-4 bg-card/50">
+      <motion.section {...fadeIn} className="py-10 md:py-16 bg-card/50">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-secondary mb-3 md:mb-4">
             Special Packages
           </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-sm md:text-base text-muted-foreground mb-8 md:mb-12 max-w-2xl mx-auto">
             Comprehensive treatment packages at discounted rates
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             {packages.map((pkg, index) => (
               <motion.div
                 key={index}
@@ -162,19 +158,20 @@ const Pricing = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2, duration: 0.5 }}
+                className={index === 2 ? "col-span-2 md:col-span-1 max-w-[calc(50%-0.5rem)] md:max-w-none mx-auto w-full" : ""}
               >
-                <Card className="h-full hover:shadow-hover transition-smooth bg-card border-2 hover:border-accent">
-                  <CardHeader>
-                    <CardTitle className="text-2xl text-primary">{pkg.title}</CardTitle>
-                    <p className="text-sm text-muted-foreground">{pkg.description}</p>
-                    <p className="text-3xl font-bold text-accent mt-4">{pkg.price}</p>
+                <Card className="h-full hover:shadow-hover transition-smooth bg-card border hover:border-accent flex flex-col">
+                  <CardHeader className="p-4 md:p-6 pb-2 md:pb-6">
+                    <CardTitle className="text-lg md:text-2xl text-primary leading-tight">{pkg.title}</CardTitle>
+                    <p className="text-xs md:text-sm text-muted-foreground line-clamp-2 md:line-clamp-none mt-1 md:mt-2">{pkg.description}</p>
+                    <p className="text-lg md:text-3xl font-bold text-accent mt-2 md:mt-4 whitespace-nowrap overflow-hidden text-ellipsis">{pkg.price}</p>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3">
+                  <CardContent className="p-4 md:p-6 pt-0 md:pt-0 flex-grow">
+                    <ul className="space-y-2 md:space-y-3">
                       {pkg.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{feature}</span>
+                          <CheckCircle className="w-3 h-3 md:w-5 md:h-5 text-accent mr-1.5 md:mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-[10px] md:text-sm text-muted-foreground leading-snug">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -187,12 +184,12 @@ const Pricing = () => {
       </motion.section>
 
       {/* CTA */}
-      <motion.section {...fadeIn} className="py-16 px-4">
+      <motion.section {...fadeIn} className="py-10 md:py-16">
         <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3 md:mb-4">
             Need an Exact Quote?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
             Contact us for a personalized treatment plan and accurate pricing
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

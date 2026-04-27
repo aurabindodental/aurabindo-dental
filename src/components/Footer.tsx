@@ -77,8 +77,8 @@ const Footer = () => {
               <li className="flex items-start text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 mr-2 mt-1 flex-shrink-0 text-accent" />
                 <span>
-                  Flat no-503, 5th Floor, MVS Heights, Vinayaka Nagar, Khanamet, Madhapur,
-                  Hyderabad – 500081
+                  Flat no-102, Tirumala Mansion, Plot no-120, Survey no-41, Guttala Begumpet,
+                  Kavuri hills, Madhapur, Hyderabad -500033
                 </span>
               </li>
               <li className="flex items-center text-sm text-muted-foreground">

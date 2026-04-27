@@ -59,9 +59,9 @@ const Index = () => {
       </section>
 
       {/* Welcome Section */}
-      <motion.section {...fadeIn} className="py-12 px-4">
+      <motion.section {...fadeIn} className="py-8 md:py-12">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-primary mb-4 md:mb-6">
             Welcome to Aurobindo Dental Hospital
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -82,12 +82,12 @@ const Index = () => {
       </motion.section>
 
       {/* Why Choose Us */}
-      <motion.section {...fadeIn} className="py-16 px-4">
+      <motion.section {...fadeIn} className="py-10 md:py-16">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-secondary mb-8 md:mb-12">
             Why Choose Us
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {reasons.map((reason, index) => (
               <motion.div
                 key={index}
@@ -96,13 +96,13 @@ const Index = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <Card className="h-full hover:shadow-hover transition-smooth bg-card">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <reason.icon className="w-8 h-8 text-accent" />
+                <Card className="h-full hover:shadow-hover transition-smooth bg-card aspect-square flex flex-col justify-center">
+                  <CardContent className="p-3 md:p-6 text-center flex flex-col items-center justify-center">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-4">
+                      <reason.icon className="w-6 h-6 md:w-8 md:h-8 text-accent" />
                     </div>
-                    <h3 className="text-xl font-bold text-primary mb-2">{reason.title}</h3>
-                    <p className="text-muted-foreground">{reason.description}</p>
+                    <h3 className="text-sm md:text-xl font-bold text-primary mb-1 md:mb-2">{reason.title}</h3>
+                    <p className="text-xs md:text-base text-muted-foreground line-clamp-3">{reason.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -112,12 +112,12 @@ const Index = () => {
       </motion.section>
 
       {/* Key Treatments */}
-      <motion.section {...fadeIn} className="py-16 px-4 bg-card/50">
+      <motion.section {...fadeIn} className="py-10 md:py-16 bg-card/50">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-secondary mb-3 md:mb-4">
             Key Treatments
           </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-sm md:text-base text-muted-foreground mb-8 md:mb-12 max-w-2xl mx-auto">
             Comprehensive dental care with transparent pricing
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -155,9 +155,9 @@ const Index = () => {
       </motion.section>
 
       {/* Testimonials */}
-      <motion.section {...fadeIn} className="py-16 px-4">
+      <motion.section {...fadeIn} className="py-10 md:py-16">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-secondary mb-8 md:mb-12">
             What Our Patients Say
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -190,12 +190,12 @@ const Index = () => {
       </motion.section>
 
       {/* CTA Section */}
-      <motion.section {...fadeIn} className="py-16 px-4 bg-accent/5">
+      <motion.section {...fadeIn} className="py-10 md:py-16 bg-accent/5">
         <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3 md:mb-4">
             Ready for a Healthier Smile?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
             Book your appointment today and experience world-class dental care
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

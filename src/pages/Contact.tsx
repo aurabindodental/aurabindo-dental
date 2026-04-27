@@ -93,7 +93,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      content: 'Flat no-503, 5th Floor, MVS Heights, Vinayaka Nagar, Khanamet, Madhapur, Hyderabad – 500081, Telangana',
+      content: 'Flat no-102, Tirumala Mansion, Plot no-120, Survey no-41, Guttala Begumpet, Kavuri hills, Madhapur, Hyderabad -500033',
     },
     {
       icon: Phone,
@@ -134,17 +134,17 @@ const Contact = () => {
       <WhatsAppFloat />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-4">
+      <section className="pt-24 md:pt-32 pb-8 md:pb-12">
         <div className="container mx-auto text-center max-w-4xl">
           <motion.h1
             {...fadeIn}
-            className="text-4xl md:text-5xl font-bold text-primary mb-6"
+            className="text-3xl md:text-5xl font-bold text-primary mb-4 md:mb-6"
           >
             Contact Us
           </motion.h1>
           <motion.p
             {...fadeIn}
-            className="text-lg text-muted-foreground leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground leading-relaxed"
           >
             Get in touch with us for appointments, queries, or emergencies
           </motion.p>
@@ -152,9 +152,9 @@ const Contact = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <motion.section {...fadeIn} className="py-12 px-4">
+      <motion.section {...fadeIn} className="py-8 md:py-12">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
@@ -163,13 +163,13 @@ const Contact = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <Card className="h-full hover:shadow-hover transition-smooth bg-card">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <info.icon className="w-6 h-6 text-accent" />
+                <Card className="h-full hover:shadow-hover transition-smooth bg-card aspect-square flex flex-col justify-center">
+                  <CardContent className="p-3 md:p-6 text-center flex flex-col items-center justify-center h-full">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-4 flex-shrink-0">
+                      <info.icon className="w-5 h-5 md:w-6 md:h-6 text-accent" />
                     </div>
-                    <h3 className="text-lg font-bold text-primary mb-2">{info.title}</h3>
-                    <div className="text-sm text-muted-foreground whitespace-pre-line">
+                    <h3 className="text-sm md:text-lg font-bold text-primary mb-1 md:mb-2">{info.title}</h3>
+                    <div className="text-[10px] md:text-sm text-muted-foreground whitespace-pre-line line-clamp-4 md:line-clamp-none">
                       {info.content}
                     </div>
                   </CardContent>
@@ -181,7 +181,7 @@ const Contact = () => {
       </motion.section>
 
       {/* Contact Form & Map */}
-      <motion.section {...fadeIn} className="py-16 px-4 bg-card/50">
+      <motion.section {...fadeIn} className="py-10 md:py-16 bg-card/50">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}
@@ -304,12 +304,12 @@ const Contact = () => {
       </motion.section>
 
       {/* Emergency Contact */}
-      <motion.section {...fadeIn} className="py-16 px-4">
+      <motion.section {...fadeIn} className="py-10 md:py-16">
         <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3 md:mb-4">
             Dental Emergency?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
             Call us immediately for urgent dental care
           </p>
           <a href="tel:9866937777">
